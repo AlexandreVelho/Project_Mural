@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <!-- Firebase App e serviços -->
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.3/firebase-auth.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js"></script>
+  <script type="module" src="https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js"></script>
+
+  <!-- Configuração e funções do app -->
+  <script type="module" src="app.js" defer></script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechCorp - InfoMural</title>
+  <meta name="description" content="Mural de informações corporativas da TechCorp com notícias, avisos e eventos para os colaboradores.">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Cabeçalho com Login de Administrador -->
+  <header>
+    <div class="header-content">
+      <h1>TechCorp</h1>
+      <p>Informações Importantes para Colaboradores</p>
+      <button id="admin-login-btn">Login Administrador</button>
+    </div>
+  </header>
+
+  <!-- Filtro e Pesquisa -->
+  <nav>
+    <input type="text" id="search" placeholder="Pesquisar...">
+    <select id="category-filter">
+      <option value="">Todas as Categorias</option>
+      <option value="Noticias">Notícias</option>
+      <option value="Avisos">Avisos</option>
+      <option value="Eventos">Eventos</option>
+    </select>
+  </nav>
+
+  <!-- Conteúdo principal do Mural -->
+  <main id="mural-container">
+    <h2>Mural de Informações</h2>
+    <div id="messages"></div>
+  </main>
+
+  <!-- Área Administrativa -->
+  <section id="admin-panel" style="display: none;">
+    <h3>Adicionar Nova Informação</h3>
+    <input type="text" id="title" placeholder="Título" required>
+    <textarea id="new-message" placeholder="Escreva uma nova mensagem..." required></textarea>
+    <input type="file" id="file-upload" accept="image/*,.pdf">
+    <select id="category">
+      <option value="Noticias">Notícias</option>
+      <option value="Avisos">Avisos</option>
+      <option value="Eventos">Eventos</option>
+    </select>
+    <input type="date" id="start-date" placeholder="Data de Início">
+    <input type="date" id="end-date" placeholder="Data de Fim">
+    <button id="post-message-btn">Publicar</button>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 TechCorp. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
